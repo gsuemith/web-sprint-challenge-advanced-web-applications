@@ -22,6 +22,7 @@ const Login = () => {
     e.preventDefault();
     axios.post('http://localhost:5000/api/login', credentials)
       .then(res => {
+        console.log(res)
         localStorage.setItem('token', res.data.payload)
         push("/bubbles")
       })
@@ -36,7 +37,7 @@ const Login = () => {
   }
 
   return (
-    <h4>
+    <>
       <h1>
         Welcome to the Bubble App!
         <p>Build a login page here</p>
@@ -64,7 +65,7 @@ const Login = () => {
         </div>
         <button>Log In</button>
       </form>
-    </h4>
+    </>
   );
 };
 
